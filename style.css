@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+footer {
+    color: grey;
+}
+
+svg.icon {
+    fill: grey;
+    width: 32px;
+    height: 32px;
+    stroke: grey;
+    display: inline-block;
+    margin: 10px;
+}
+
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+main div.title>p:first-of-type {
+    /* top spacing hack for image wrapped in a <p>*/
+    font-size: 0;
+}
+
+main div.title img {
+    width: 100vw;
+    height: 80vw;
+    object-fit: cover;
+}
+
+main .title .header {
+    margin-top: -2.8rem;
+}
+
+main .title .header h1+p {
+    margin-top: 2rem;
+}
+
+main>div.default {
+    padding: 40px 20px;
+}
+
+main>div.default.stages {
+    background-color: white;
+    color: black;
+}
+
+main>div.default {
+    position: relative;
+}
+
+main>div.default img {
+    position: absolute;
+    top: 90px;
+    left: 25vw;
+    width: 70vw;
+    height: 65%;
+    object-fit: cover;
+    opacity: 35%;
+
+}
+
+main>div.default.stages img {
+    left: 20px;
+}
+
+main h1 {
+    font-size: 1.5rem;
+}
+
+main p {
+    font-size: 1.2rem;
+    font-weight: 300;
+
+}
+
+main a:any-link {
+    background-color: white;
+    color: black;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 20px;
+}
+
+main>div.stages a:any-link {
+    background-color: black;
+    color: white;
+}
+
+footer {
+    padding: 20px;
+}
+
+footer h1 {
+    font-size: 1.5rem;
+}
