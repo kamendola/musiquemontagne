@@ -63,20 +63,35 @@ main>div.default {
     position: relative;
 }
 
-main>div.default img {
-    position: absolute;
-    top: 90px;
-    left: 25vw;
-    width: 70vw;
-    height: 65%;
-    object-fit: cover;
-    opacity: 35%;
-
+main>div.default {
+    display: grid;
+    grid-template-areas: 'overlay';
 }
 
-main>div.default.stages img {
-    left: 20px;
+main>div.default>* {
+    grid-area: overlay;
 }
+
+main>div.default .bg-image {
+    overflow: hidden;
+    opacity: 0.4;
+    padding-top: 40px;
+    background-size: cover;
+    background-clip: content-box;
+    width: 70%;
+    padding-left: 30%;
+}
+
+main>div.default.stages .bg-image {
+    padding-left: 0%;
+}
+
+main>div.default .overlay {
+    /* overlay hack as z-order seems to be influenced by opacity */
+    opacity: 0.99;
+}
+
+
 
 main h1 {
     font-size: 1.5rem;
@@ -95,7 +110,8 @@ main a:any-link {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 600;
-    margin: 20px;
+    margin: 20px 0;
+    display: inline-block;
 }
 
 main>div.stages a:any-link {
@@ -109,4 +125,52 @@ footer {
 
 footer h1 {
     font-size: 1.5rem;
+}
+
+@media (min-width: 750px) {
+
+    main .title .header {
+        position: absolute;
+        left: 0;
+        padding: 100px;
+        top: 200px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    main h1 {
+        font-size: 3rem;
+    }
+
+    main p {
+        font-size: 1.7rem;
+    }
+
+    main div.title img {
+        width: 50vw;
+        height: 800px;
+        margin-left: 50vw;
+    }
+    
+    main>div.default .bg-image {
+        padding-left: 0;
+        justify-self: center;
+        padding-top: 80px
+    }    
+
+    main>div.default .overlay {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    main>div.default .overlay p {
+        width: 50%;
+        margin-left: 50%; 
+        text-align: left;   
+    }
+    
+    main>div.default.stages .overlay p {
+        width: 50%;
+        margin-left: 0;
+    }
 }
